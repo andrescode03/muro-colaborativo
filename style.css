@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.header{
+    box-shadow: -1px 0px 31px 26px rgba(133, 12, 12, 0.47);
+}
+
 .contenedor{
     width: 400px;
     height: 400px;
