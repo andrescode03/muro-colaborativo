@@ -216,3 +216,269 @@ header {
         display: none;
     }
 }
+
+
+
+
+
+/* Variables para el footer */
+:root {
+    --footer-bg-gradient: linear-gradient(135deg, #1a1f4a 0%, #2d3561 100%);
+    --footer-accent: #00d4ff;
+    --footer-text: #e8eaf0;
+    --footer-hover: #64b5f6;
+}
+
+/* Mejora del fondo del footer */
+footer {
+    background: var(--footer-bg-gradient);
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+/* Efecto de onda animada en el footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(100, 181, 246, 0.1) 0%, transparent 70%);
+    animation: wave 15s linear infinite;
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mejoras para el contenedor principal del footer */
+.footer-div {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mejoras para el brand del footer */
+.footer-brand-new {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#riwi_logo {
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+#riwi_logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+}
+
+.footer-title-new {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--footer-text);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Mejoras para los íconos sociales */
+.footer-social-new {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social-new a {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.footer-social-new a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--footer-accent);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.footer-social-new a:hover::after {
+    width: 100%;
+}
+
+.footer-social-new img {
+    filter: brightness(0.9);
+    transition: all 0.3s ease;
+}
+
+.footer-social-new a:hover img {
+    transform: translateY(-5px) scale(1.1);
+    filter: brightness(1.2) drop-shadow(0 5px 15px rgba(0, 212, 255, 0.4));
+}
+
+/* Mejoras para el reloj virtual */
+.virtualClock {
+    background: linear-gradient(145deg, #2a3f2a, #3a4435);
+    box-shadow: 
+        8px 8px 16px rgba(0, 0, 0, 0.3),
+        -8px -8px 16px rgba(255, 255, 255, 0.05),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+    padding: 25px 40px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.virtualClock::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(154, 205, 50, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.virtualClock h2 {
+    color: #adff2f;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+    text-shadow: 0 0 10px rgba(173, 255, 47, 0.5);
+}
+
+.virtualClock .time {
+    font-family: 'Courier New', monospace;
+    text-shadow: 
+        0 0 20px rgba(173, 255, 47, 0.8),
+        0 0 40px rgba(173, 255, 47, 0.4);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 20px rgba(173, 255, 47, 0.8); }
+    to { text-shadow: 0 0 30px rgba(173, 255, 47, 1), 0 0 50px rgba(173, 255, 47, 0.6); }
+}
+
+.virtualClock .date {
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+/* Mejoras para la información de contacto */
+.footer-contact-new {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.footer-contact-new address {
+    font-style: normal;
+    line-height: 1.8;
+    color: var(--footer-text);
+}
+
+.footer-contact-new strong {
+    color: var(--footer-accent);
+    font-weight: 600;
+}
+
+.footer-contact-new a {
+    color: var(--footer-hover);
+    text-decoration: none;
+    position: relative;
+}
+
+.footer-contact-new a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--footer-hover);
+    transition: width 0.3s ease;
+}
+
+.footer-contact-new a:hover::after {
+    width: 100%;
+}
+
+/* Mejoras para el copyright */
+.footer-bottom-new {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 80%;
+}
+
+#copyright {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Efectos hover generales para enlaces del footer */
+footer a {
+    position: relative;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: var(--footer-accent);
+}
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+    .footer-div {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .virtualClock {
+        width: 90%;
+        margin: 20px auto;
+    }
+    
+    .footer-contact-new {
+        text-align: center;
+        width: 90%;
+        margin: 20px auto;
+    }
+}
